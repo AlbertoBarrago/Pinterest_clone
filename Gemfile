@@ -6,6 +6,7 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'masonry-rails'
 # Use paperclip for profile_image
 gem 'paperclip', '~> 4.3.1'
 # Use Uglifier as compressor for JavaScript assets
