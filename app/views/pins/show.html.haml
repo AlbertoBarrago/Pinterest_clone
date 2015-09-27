@@ -1,10 +1,11 @@
+= image_tag @pin.image.url(:medium)
 %h1= @pin.title
 %p= @pin.description
 %p
 Inviato da
 = @pin.user.email
 
-%br/  
+%br/
 
 = link_to "Back", root_path
 = link_to "Edit", edit_pin_path
