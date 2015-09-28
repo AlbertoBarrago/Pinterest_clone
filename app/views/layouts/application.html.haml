@@ -6,19 +6,52 @@
   = javascript_include_tag 'application'
   = csrf_meta_tags
 %body
-  %nav.navbar.navbar-default
-    .container
-      .navbar-brand= link_to "Albz Board", root_path
 
-      - if user_signed_in?
+  %nav.navbar.navbar-default{:role => "navigation"}
+    .container-fluid
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header
+        %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => root_path } Pinterest
+      / Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+
+        -# %form.navbar-form.navbar-left{:role => "search"}
+        -#   .form-group
+        -#     %input.form-control{:placeholder => "Search", :type => "text"}
+        -#   %button.btn.btn-default{:type => "submit"} Submit
         %ul.nav.navbar-nav.navbar-right
-          %li= link_to "New Pin", new_pin_path
-          %li= link_to "Account", edit_user_registration_path
-          %li= link_to "Sign Out", destroy_user_session_path, method: :delete
-      - else
-        %ul.nav.navbar-nav.navbar-right
-          %li= link_to "Sign Up", new_user_registration_path
-          %li= link_to "Sign In", new_user_session_path
+          - if user_signed_in?
+            %ul.nav.navbar-nav.navbar-right
+              %li= link_to "New Pin", new_pin_path
+              %li= link_to "Account", edit_user_registration_path
+              %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+          - else
+            %ul.nav.navbar-nav.navbar-right
+              %li= link_to "Sign Up", new_user_registration_path
+              %li= link_to "Sign In", new_user_session_path
+
+    / /.navbar-collapse
+  / /.container-fluid
+
+
+  -# %nav.navbar.navbar-default
+  -#   .container-fluid
+  -#     .navbar-brand= link_to "Albz Board", root_path
+  -#
+  -#     - if user_signed_in?
+  -#       %ul.nav.navbar-nav.navbar-right
+  -#         %li= link_to "New Pin", new_pin_path
+  -#         %li= link_to "Account", edit_user_registration_path
+  -#         %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+  -#     - else
+  -#       %ul.nav.navbar-nav.navbar-right
+  -#         %li= link_to "Sign Up", new_user_registration_path
+  -#         %li= link_to "Sign In", new_user_session_path
 
   .container
     - flash.each do |name, msg|
