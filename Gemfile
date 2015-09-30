@@ -31,6 +31,8 @@ gem 'haml', '~> 4.0.7'
 gem 'simple_form', '~> 3.2.0'
 # Use device Gem
 gem 'devise', '~> 3.5.2'
+# Use commontator gem 
+gem 'commontator', '~> 4.10.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

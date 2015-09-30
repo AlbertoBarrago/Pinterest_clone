@@ -1,5 +1,19 @@
-<p>Welcome <%= @email %>!</p>
+<div class="col-md-8 col-md-offset-2">
+  <div class="row">
+    <div class="panel panel-default">
+      
+      <div class="panel-heading">
+        <h2>Edit Your Account</h2>
+      </div>
 
-<p>You can confirm your account email through the link below:</p>
+      <div class="panel-body">
+        <p>Welcome <%= @email %>!</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+        <p>You can confirm your account email through the link below:</p>
+
+        <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+      </div>
+    </div>
+  </div>
+</div>
