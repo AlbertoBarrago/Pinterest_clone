@@ -13,7 +13,8 @@
   %meta{:content => "", :name => "Alberto Barrago"}/
 
   / Mobile viewport optimized: j.mp/bplateviewport
-  %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+  / <meta name="viewport" content="width=device-width, initial-scale=1">
+  %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0, maximum-scale=1.0"}
   / Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references
   %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
   %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}
@@ -45,23 +46,6 @@
             %li= link_to "Sign Up", new_user_registration_path
             %li= link_to "Sign In", new_user_session_path
 
-    / /.navbar-collapse
-  / /.container-fluid
-
-
-  -# %nav.navbar.navbar-default
-  -#   .container-fluid
-  -#     .navbar-brand= link_to "Albz Board", root_path
-  -#
-  -#     - if user_signed_in?
-  -#       %ul.nav.navbar-nav.navbar-right
-  -#         %li= link_to "New Pin", new_pin_path
-  -#         %li= link_to "Account", edit_user_registration_path
-  -#         %li= link_to "Sign Out", destroy_user_session_path, method: :delete
-  -#     - else
-  -#       %ul.nav.navbar-nav.navbar-right
-  -#         %li= link_to "Sign Up", new_user_registration_path
-  -#         %li= link_to "Sign In", new_user_session_path
 
   .container
     - flash.each do |name, msg|
