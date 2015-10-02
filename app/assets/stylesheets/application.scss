@@ -126,7 +126,7 @@
  	min-height: 250px;
  }
 
- #masonry-container {
+#masonry-container {
   background: #FFF;
   padding: 5px;
   margin-bottom: 20px;
@@ -136,8 +136,13 @@
      -moz-border-radius: 5px;
           border-radius: 5px;
 }
+// Responsive view for index/pins on mobile
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
 
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1;
+  #pins .box {
+    width: 200px !important;
+  }
+
 }
