@@ -34,6 +34,8 @@ gem 'devise', '~> 3.5.2'
 # Use commontator gem
 gem 'commontator', '~> 4.10.0'
 
+gem 'omniauth-facebook'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
