@@ -1,6 +1,6 @@
 class PinsController < ApplicationController
   before_action :find_pin, only: [:show, :upvote]
-  before_action :authenticate_user!, except: [:index, :show, :create]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @pins = Pin.all.order("created_at DESC")
@@ -16,7 +16,6 @@ class PinsController < ApplicationController
 
   def create
     @pin = current_user.pins.build(pin_params)
-    
     if @pin.save
       redirect_to @pin, notice: "Pin creato con successo!"
     else
@@ -36,7 +35,10 @@ class PinsController < ApplicationController
   end
 
   def destroy
-    @pin.destroy
+    @pin = find_pin
+    if @pin.present?
+      @pin.destroy
+    end
     redirect_to root_path
   end
 
